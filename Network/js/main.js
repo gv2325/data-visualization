@@ -57,7 +57,7 @@ function initSigma(config) {
         defaultHoverLabelBGColor: "#002147",
         defaultLabelHoverColor: "#fff",
         labelThreshold: 10,
-        defaultEdgeType: "curve",
+        defaultEdgeType: "line",
         hoverFontStyle: "bold",
         fontStyle: "bold",
         activeFontStyle: "bold"
@@ -67,10 +67,10 @@ function initSigma(config) {
     	graphProps=config.sigma.graphProperties;
     else
     	graphProps={
-        minNodeSize: 1,
-        maxNodeSize: 7,
-        minEdgeSize: 0.2,
-        maxEdgeSize: 0.5
+        minNodeSize: 20,
+        maxNodeSize: 100,
+        minEdgeSize: 10,
+        maxEdgeSize: 20
     	};
 	
 	if (config.sigma && config.sigma.mouseProperties) 

@@ -1,52 +1,56 @@
 function initMap() {
-    const myLatlng = { lat: 40.806912, lng: -73.963060 };
+    const myLatlng = { lat: 40.8990, lng: -73.7877 };
     const map = new google.maps.Map(document.getElementById("map"), {
         zoom: 3,
         center: myLatlng,
         disableDefaultUI: true,
         zoomControl: true,
     });
-    const marker = new google.maps.Marker({
+    // Create the initial InfoWindow.
+    let infoWindow = new google.maps.InfoWindow({
+      content: "Move mouse over map to get LAT/LNG",
+      position: myLatlng,
+    });
+  
+    infoWindow.open(map);
+    // Configure the click listener.
+    map.addListener("mousemove", (mapsMouseEvent) => {
+      // Close the current InfoWindow.
+      infoWindow.close();
+      // Create a new InfoWindow.
+      infoWindow = new google.maps.InfoWindow({
+        position: mapsMouseEvent.latLng,
+      });
+      infoWindow.setContent(
+        JSON.stringify(mapsMouseEvent.latLng.toJSON(), null, 2)
+      );
+      infoWindow.open(map);
+    });
+
+    const infowindow1 = new google.maps.InfoWindow({
+        content: "Change the zoom level",
         position: myLatlng,
-        map,
-        title: "Click to zoom",
-    });
+      });
+    
+      infowindow1.open(map);
+      map.addListener("zoom_changed", () => {
+        infowindow1.setContent("Zoom: " + map.getZoom());
+      });
 
-    map.addListener("center_changed", () => {
-      // 3 seconds after the center of the map has changed, pan back to the
-      // marker.
-        window.setTimeout(() => {
-        map.panTo(marker.getPosition());
-        }, 3000);
-    });
-    marker.addListener("click", () => {
-        map.setZoom(19);
-        map.setCenter(marker.getPosition());
-    });
+      map.addListener("mousemove", (mapsMouseEvent) => {
+        displayCoordinates(mapsMouseEvent.latLng);
+        });
 
-    google.maps.event.addListener(map, 'click', function (event) {
+      google.maps.event.addListener(map, "mousemove", function (event) {
         displayCoordinates(event.latLng);               
     });
+  }
 
-            // Create the initial InfoWindow.
-        let infoWindow = new google.maps.InfoWindow({
-            content: "Click the map to get Lat/Lng!",
-            position: myLatlng,
-        });
-        infoWindow.open(map);
-        // Configure the click listener.
-        map.addListener("click", (mapsMouseEvent) => {
-            // Close the current InfoWindow.
-            infoWindow.close();
-            // Create a new InfoWindow.
-            infoWindow = new google.maps.InfoWindow({
-                position: mapsMouseEvent.latLng,
-            });
-            infoWindow.setContent(
-                JSON.stringify(mapsMouseEvent.latLng.toJSON(), null, 2)
-            );
-            infoWindow.open(map);
-        });
+  function displayCoordinates(pnt) {
+    document.getElementById("lat").innerHTML = pnt.lat();
+    document.getElementById("lng").innerHTML = pnt.lng();
+    console.log(pnt.lat());
+    console.log(pnt.lng());
 }
 
 window.initMap = initMap;

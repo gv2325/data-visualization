@@ -7,7 +7,8 @@
     <title>Blue Dot Project - Exposing Layers</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://d3js.org/d3.v6.min.js"></script>
-    
+    <script src="map.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 </head>
 <body>
         <header>
@@ -65,5 +66,9 @@
         update the information displayed and to optimize its interface. Why then is Google
         Maps questioned by Eckert?
     </marquee>
+    <script 
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjCrfAcJpgqZxwz57JDSIq7BjtLCP7lx4&callback=initMap&v=weekly"
+        defer
+    ></script>
 </body>
 </html>

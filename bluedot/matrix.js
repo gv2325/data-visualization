@@ -9,7 +9,7 @@ var detectedZoom = null
     height = 600 - margin.top - margin.bottom;
   
   // append the svg object to the body of the page
-  var svg = d3.select("#my_dataviz")
+  var svg = d3.select("matrix_container")
   .append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
@@ -19,7 +19,7 @@ var detectedZoom = null
   
   //Read the data
 		  //NEW loading different file and formatting to match old file
-		  d3.csv("bluedot_test1.csv", function(file) {
+		  d3.csv("bluedot.csv", function(file) {
 			//  console.log(data)
 			  var data = []
 			  for(var d in file){

@@ -30,6 +30,11 @@ body, html {
     color: var(--primary);
 }
 
+.marquee1 {
+    background-color: #fff;
+    color: #000;
+}
+
 header.svelte-bt9yf6 {
     display: flex;
     justify-content: space-between;
@@ -161,6 +166,7 @@ section:hover {
 .left_aside {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     max-height: 100vh;
     width: var(--asideWidth);
     background: rgb(0,0,0);
@@ -176,8 +182,10 @@ section:hover {
 
 .description_container {
     margin: 5px;
-    height: 30%;
+    height: 25%;
     background: rgb(0,0,0);
+    overflow: scroll;
+    font-size: 0.75rem;
 }
 
 .video_container {

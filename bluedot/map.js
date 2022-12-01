@@ -1,5 +1,5 @@
 function initMap() {
-    const myLatlng = { lat: 40.8990, lng: -73.7877 };
+    const myLatlng = { lat: 40.807540305250406, lng: -73.96257877349854 };
     const map = new google.maps.Map(document.getElementById("map"), {
         zoom: 3,
         center: myLatlng,
@@ -25,6 +25,7 @@ function initMap() {
         JSON.stringify(mapsMouseEvent.latLng.toJSON(), null, 2)
       );
       infoWindow.open(map);
+      console.log(mapsMouseEvent.latLng.toJSON());
     });
 
     const infowindow1 = new google.maps.InfoWindow({
@@ -35,22 +36,8 @@ function initMap() {
       infowindow1.open(map);
       map.addListener("zoom_changed", () => {
         infowindow1.setContent("Zoom: " + map.getZoom());
+        console.log(map.getZoom());
       });
 
-      map.addListener("mousemove", (mapsMouseEvent) => {
-        displayCoordinates(mapsMouseEvent.latLng);
-        });
-
-      google.maps.event.addListener(map, "mousemove", function (event) {
-        displayCoordinates(event.latLng);               
-    });
   }
-
-  function displayCoordinates(pnt) {
-    document.getElementById("lat").innerHTML = pnt.lat();
-    document.getElementById("lng").innerHTML = pnt.lng();
-    console.log(pnt.lat());
-    console.log(pnt.lng());
-}
-
 window.initMap = initMap;

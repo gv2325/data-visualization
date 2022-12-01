@@ -38,6 +38,7 @@ function initMap() {
         infowindow1.setContent("Zoom: " + map.getZoom());
         console.log(map.getZoom());
       });
+    var currentZoom = map.getZoom()
 
   }
 window.initMap = initMap;

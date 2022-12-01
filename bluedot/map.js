@@ -1,3 +1,6 @@
+
+var currentZoom = map.getZoom()
+
 function initMap() {
     const myLatlng = { lat: 40.807540305250406, lng: -73.96257877349854 };
     const map = new google.maps.Map(document.getElementById("map"), {
@@ -25,7 +28,10 @@ function initMap() {
         JSON.stringify(mapsMouseEvent.latLng.toJSON(), null, 2)
       );
       infoWindow.open(map);
-      console.log(mapsMouseEvent.latLng.toJSON());
+      document.getElementById("lat").innerHTML = 
+      "Lat [" + mapsMouseEvent.latLng.toJSON().lat + "]";
+      console.log(mapsMouseEvent.latLng.toJSON().lat);
+      console.log(mapsMouseEvent.latLng.toJSON().lng);
     });
 
     const infowindow1 = new google.maps.InfoWindow({
@@ -38,7 +44,5 @@ function initMap() {
         infowindow1.setContent("Zoom: " + map.getZoom());
         console.log(map.getZoom());
       });
-    var currentZoom = map.getZoom()
-
   }
 window.initMap = initMap;

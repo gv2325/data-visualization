@@ -1,5 +1,6 @@
 #map {
     height: 100%;
+    zoom: 1.15;
 }
 
 body, html {
@@ -184,7 +185,14 @@ section:hover {
     margin: 5px;
     height: 25%;
     background: rgb(0,0,0);
-    overflow: scroll;
+    overflow: hidden;
+    font-size: 0.75rem;
+}
+
+.matrix_container {
+    margin: 5px;
+    background: rgb(0,0,0);
+    overflow: hidden;
     font-size: 0.75rem;
 }
 
@@ -267,13 +275,57 @@ button:hover {
     background: #fff;
 }
 
-.marquee.scroller1 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+.marque1 {
+    position: relative;
+    height: 20px;
     overflow: hidden;
     background: rgb(255, 255, 255);
-    color: #fff;
+    color: rgb(0, 0, 0);
+    padding-bottom: 3px;
 }
+
+.marque2 {
+    position: relative;
+    height: 20px;
+    overflow: hidden;
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    padding-bottom: 3px;
+}
+
+.scroller {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/*.scroll-left {
+    height: 50px;	
+    overflow: hidden;
+    position: relative;
+    background: yellow;
+    color: orange;
+    border: 1px solid orange;
+}*/
+
+/*.scroll-left p {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    line-height: 50px;
+    text-align: center;
+    /* Starting position */
+    /*transform:translateX(100%);
+    /* Apply animation to this element */
+    /*animation: scroll-left 15s linear infinite;
+}*/
+   /* Move it (define the animation) */
+/*@keyframes scroll-left {
+    0%   {
+    transform: translateX(100%); 		
+    }
+    100% {
+    transform: translateX(-100%); 
+    }
+}*/

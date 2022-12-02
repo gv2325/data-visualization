@@ -1,6 +1,6 @@
 
 function initMap() {
-  const myLatlng = { lat: 40.807540305250406, lng: -73.96257877349854 };
+  const myLatlng = { lat: 41.871386, lng: -87.619079 };
   const map = new google.maps.Map(document.getElementById("map"), {
 	  maxZoom: 18,
 	  minZoom: 0,
@@ -9,8 +9,14 @@ function initMap() {
       disableDefaultUI: true,
       zoomControl: true,
   });
-  
-  
+
+  const image =
+    "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png";
+  const beachMarker = new google.maps.Marker({
+    position: myLatlng,
+    map,
+    icon: image,
+  });
 
 // Get coordinates of the mouse pointer
 map.addListener("mousemove", (mapsMouseEvent) => {

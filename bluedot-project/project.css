@@ -187,13 +187,13 @@ section:hover {
 
 .infographics_container {
     margin: 5px;
-    height: 30%;
+    height: auto;
     background: rgb(0,0,0);
 }
 
 .description_container {
     margin: 5px;
-    height: 25%;
+    height: auto;
     background: rgb(0,0,0);
     overflow: hidden;
     font-size: 1rem;

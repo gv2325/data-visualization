@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,9 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blue Dot Project - Exposing Layers</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <link rel="stylesheet" href="project.css">
+    <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="main.js"></script>
+    <script src="matrix.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 </head>
 <body>
@@ -17,20 +19,20 @@
                     <header class="svelte-bt9yf6">
                         <div class="title svelte-bt9yf6">
                             <h1 class="svelte-bt9yf6">
-                                <div class="li"><a href="intro.html">bluedot</a></div>
+                                <div class="li"><a href="intro-page.html">bluedot</a></div>
                             </h1>
                         </div>
                         <div class="meta svelte-bt9yf6">
                             <div id="lat">Lat [ ]</div>
                             <div id="long">Long [ ]</div>
-                            <div id="zoom">ZL00</div>
+                            <div id="zoom">ZL3</div>
                         </div>
                     </header>
         </header>
         <main>
             <aside class = "left_aside">
                 <div class = "infographics_container">
-                    <h3> Project by <br> Lucia, George & Junling</h3>
+                    <h6>By <br> Lucia, Junling & George</h6>
                 </div>
                 <div class = "description_container">
                     <p>Google does not offer a legend of Google Maps. The legend on this page shows different colour values on different zoom levels and is based on the empirical research made by Studio Joost Grootens in “Blind Maps and Blue Dots”.
@@ -56,9 +58,9 @@
                     <!-- <h3> Zoom levels matrix</h3> -->
                     <div id="my_dataviz"></div>
                
-                <div class = "description_container">
-                    <p>Description of matrix as a legend</p>
-                </div>
+                    <div class = "primaryInfo_container">
+
+                    </div>
         </main>
     </div>
     <div class="scroller">

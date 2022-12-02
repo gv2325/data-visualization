@@ -18,10 +18,20 @@ function initMap() {
     infoWindow.open(map);
     // Configure the click listener.
     map.addListener("mousemove", (mapsMouseEvent) => {
+      // Close the current InfoWindow.
+      infoWindow.close();
+      // Create a new InfoWindow.
+      infoWindow = new google.maps.InfoWindow({
+        position: mapsMouseEvent.latLng,
+      });
+      infoWindow.setContent(
+        JSON.stringify(mapsMouseEvent.latLng.toJSON(), null, 2)
+      );
+      infoWindow.open(map);
       console.log(mapsMouseEvent.latLng.toJSON().lat);
       console.log(mapsMouseEvent.latLng.toJSON().lng);
       document.getElementById("lat").innerHTML = "Lat [" + mapsMouseEvent.latLng.toJSON().lat + "]";
-      document.getElementById("lng").innerHTML = "Long [" + mapsMouseEvent.latLng.toJSON().lng + "]";
+      document.getElementById("lng").innerHTML = "Lng [" + mapsMouseEvent.latLng.toJSON().lng + "]";
     });
     
     const infowindow1 = new google.maps.InfoWindow({
@@ -31,7 +41,7 @@ function initMap() {
     
       infowindow1.open(map);
       map.addListener("zoom_changed", () => {
-        document.getElementById("zoom").innerHTML = "ZL" + map.getZoom();
+        infowindow1.setContent("Zoom: " + map.getZoom());
         console.log(map.getZoom());
       });
     

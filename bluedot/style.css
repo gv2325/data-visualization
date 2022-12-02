@@ -189,12 +189,6 @@ section:hover {
     font-size: 0.75rem;
 }
 
-.matrix_container {
-    margin: 5px;
-    background: rgb(0,0,0);
-    overflow: hidden;
-    font-size: 0.75rem;
-}
 
 .video_container {
     height: 30%;

@@ -19,7 +19,7 @@ var detectedZoom = null
   
   //Read the data
 		  //NEW loading different file and formatting to match old file
-		  d3.csv("bluedot.csv", function(file) {
+		  d3.csv("bluedot_test1.csv", function(file) {
 			//  console.log(data)
 			  var data = []
 			  for(var d in file){
@@ -101,15 +101,15 @@ var detectedZoom = null
       
   
     // create a tooltip
-    // var tooltip = d3.select("#my_dataviz")
-    //   .append("div")
-    //   .style("opacity", 0)
-    //   .attr("class", "tooltip")
-    //   .style("background-color", "white")
-    //   .style("border", "solid")
-    //   .style("border-width", "2px")
-    //   .style("border-radius", "5px")
-    //   .style("padding", "5px")
+    var tooltip = d3.select("#my_dataviz")
+      .append("div")
+      .style("opacity", 0)
+      .attr("class", "tooltip")
+      .style("background-color", "white")
+      .style("border", "solid")
+      .style("border-width", "2px")
+      .style("border-radius", "5px")
+      .style("padding", "5px")
   
     // Three function that change the tooltip when user hover / move / leave a cell
 	  
@@ -130,11 +130,11 @@ var detectedZoom = null
 
     }
     var mousemove = function(d) {
-      // tooltip
-      //   .html("The exact value of<br>this cell is: " + d.value)
-      //   .style("left", (d3.mouse(this)[0]+70) + "px")
-      //   .style("top", (d3.mouse(this)[1]) + "px")
-      //   // console.log(d3.mouse(this)[1])
+      tooltip
+        .html("The exact value of<br>this cell is: " + d.value)
+        .style("left", (d3.mouse(this)[0]+70) + "px")
+        .style("top", (d3.mouse(this)[1]) + "px")
+        // console.log(d3.mouse(this)[1])
 
     }
     var mouseleave = function(d) {
@@ -243,6 +243,7 @@ var detectedZoom = null
     
   //   // var texts = svg.selectAll("text")
   //   //   .data(dataset);
+      
   //   // texts.enter()
   //   //   .append("text")
   //   //   .text(function(d) {
@@ -262,5 +263,6 @@ var detectedZoom = null
   //   //   .attr("font-family", "sans-serif")
   //   //   .attr("font-size", "11px")
   //   //   .attr("fill", "white");
+            
   //   //   //TODO: add code here to update the labels
   //   //   //HINT: everything you need for updating the labels is in the updating bars code above.

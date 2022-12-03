@@ -22,9 +22,11 @@ body, html {
 	height: 100%;
 }
 
-.my_dataviz {
-    display: flexbox;
+#my_dataviz {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .aspect.svelte-13hb6i8 {

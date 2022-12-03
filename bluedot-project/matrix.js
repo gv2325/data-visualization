@@ -4,9 +4,9 @@ var detectedZoom = null
   
   
   // set the dimensions and margins of the graph
-  var margin = {top: 20, right: 10, bottom: 30, left:40},
-    width = 280 - margin.left - margin.right,
-    height = 600 - margin.top - margin.bottom;
+  var margin = {top: 5, right: 5, bottom: 10, left: 5},
+    width = 300 - margin.left - margin.right,
+    height = 700 - margin.top - margin.bottom;
   
   // append the svg object to the body of the page
   var svg = d3.select("#my_dataviz")
@@ -103,10 +103,6 @@ var detectedZoom = null
         return "black";
       }
     }
-   
-
-      
-      
   
     // create a tooltip
     var tooltip = d3.select("#my_dataviz")
@@ -118,10 +114,9 @@ var detectedZoom = null
       .style("border-width", "2px")
       .style("border-radius", "5px")
       .style("padding", "5px")
-  
+
     // Three function that change the tooltip when user hover / move / leave a cell
-	  
-	
+
     var mouseover = function(d) {
       // tooltip
       //   .style("opacity", 1)
@@ -148,23 +143,25 @@ var detectedZoom = null
 		.attr("src",'images/'+fileName+'.jpg')
 
     }
-    var mousemove = function(d) {
+    //commenting this line of code out to remove the hidden tooltip
+    //for some reason it was affecting the layout and not reading a class or parent class assigned to the div
+
+    //var mousemove = function(d) {
       //tooltip
         //.html("The exact value of<br>this cell is: " + d.value)
         //.style("left", (d3.mouse(this)[0]+70) + "px")
         //.style("top", (d3.mouse(this)[1]) + "px")
         // console.log(d3.mouse(this)[1])
+    //}
+    //var mouseleave = function(d) {
+      //tooltip
+        //.style("opacity", 0)
+      //d3.select(this)
+        //.style("stroke", "white")
+        //.style("stroke-width",1)
+        //.style("opacity", 0.16)
+    //}
 
-    }
-    var mouseleave = function(d) {
-      tooltip
-        .style("opacity", 0)
-      d3.select(this)
-        .style("stroke", "white")
-        .style("stroke-width",1)
-        .style("opacity", 0.16)
-    }
-  
     // add the squares
     svg.selectAll()
       // .data(data, function(d) {return d.zoom_level+':'+d.legend;})

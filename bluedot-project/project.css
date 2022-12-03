@@ -201,16 +201,10 @@ section:hover {
     font-size: 1rem;
 }
 
-
 .video_container {
     height: 30%;
     background: rgb(0,0,0);
-    text-align: center;
-}
-
-video {
-    width: auto !important;
-    height: auto !important;
+    text-align: left;
 }
 
 .right_aside {

@@ -10,12 +10,17 @@ function initMap() {
       zoomControl: true,
   });
 
-  const image =
-    "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png";
-  const beachMarker = new google.maps.Marker({
+  const bluedotMarker = new google.maps.Marker({
     position: myLatlng,
     map,
-    icon: image,
+    icon: {
+	path: google.maps.SymbolPath.CIRCLE,
+    scale: 10,
+    fillOpacity: 1,
+    strokeWeight: 2,
+    fillColor: '#5384ED',
+    strokeColor: '#ffffff',
+	},
   });
 
 // Get coordinates of the mouse pointer

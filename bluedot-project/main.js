@@ -10,6 +10,10 @@ function initMap() {
       zoomControl: true,
   });
 
+  var bounds = new google.maps.LatLngBounds();
+  bounds.extend(myLatlng);
+  map.fitBounds(bounds);
+
   const bluedotMarker = new google.maps.Marker({
     position: myLatlng,
     map,
